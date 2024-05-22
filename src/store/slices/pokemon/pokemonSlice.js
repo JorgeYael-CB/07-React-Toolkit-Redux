@@ -14,8 +14,10 @@ export const pokemonSlice = createSlice({
         },
 
         setPokemons: (state, action) => {
-            consoler.log(action);
-        }
+            state.isLoading = false;
+            state.page = action.payload.page;
+            state.pokemons = action.payload.pokemons;
+        },
     }
 });
 
